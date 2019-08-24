@@ -88,7 +88,10 @@
 <meta property="og:description" content="66666666666666666666[&amp;gt;_&amp;gt;]:    3 安装Git 前往Git官网下载Windows版本压缩包，下载完成后解压安装。  安装Node.js 前往Node.js官方下载网站，下载Node.js官方安装包，下载完成后同样解压安装。  安装Hexo 到目前为止，安装Hexo所需要的环境已将安装完成，下一步只需要安装Hexo便可以了。 点击鼠标右键，看是否有Git b">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://guomingshan.github.io/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/name.png">
-<meta property="og:updated_time" content="2019-08-22T10:33:33.816Z">
+<meta property="og:image" content="https://guomingshan.github.io/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/公钥问题.png">
+<meta property="og:image" content="https://guomingshan.github.io/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/获取公钥.png">
+<meta property="og:image" content="https://guomingshan.github.io/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/css样式问题.png">
+<meta property="og:updated_time" content="2019-08-24T10:37:37.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Github上面搭建Hexo博客（一）：部署到Github">
 <meta name="twitter:description" content="66666666666666666666[&amp;gt;_&amp;gt;]:    3 安装Git 前往Git官网下载Windows版本压缩包，下载完成后解压安装。  安装Node.js 前往Node.js官方下载网站，下载Node.js官方安装包，下载完成后同样解压安装。  安装Hexo 到目前为止，安装Hexo所需要的环境已将安装完成，下一步只需要安装Hexo便可以了。 点击鼠标右键，看是否有Git b">
@@ -352,61 +355,90 @@
 <p>便安装完成了。</p>
 <a id="more"></a>
 
-<h3 id="创建Hexo文件夹"><a href="#创建Hexo文件夹" class="headerlink" title="创建Hexo文件夹"></a>创建Hexo文件夹</h3><ol>
-<li>找到想要放置博客的文件夹，比如（F:\Hexo），在该目录下鼠标右击打开Gitbash工具，（右键菜单中没有该选项的可以用cmd命令cd等进入该文件夹）。执行下面的语句，会在F:\Hexo文件夹下创建node_modules文件夹：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="创建Hexo文件夹"><a href="#创建Hexo文件夹" class="headerlink" title="创建Hexo文件夹"></a>创建Hexo文件夹</h3><h4 id="找到想要放置博客的文件夹，比如（F-Hexo），在该目录下鼠标右击打开Gitbash工具，（右键菜单中没有该选项的可以用cmd命令cd等进入该文件夹）。执行下面的语句，会在F-Hexo文件夹下创建node-modules文件夹："><a href="#找到想要放置博客的文件夹，比如（F-Hexo），在该目录下鼠标右击打开Gitbash工具，（右键菜单中没有该选项的可以用cmd命令cd等进入该文件夹）。执行下面的语句，会在F-Hexo文件夹下创建node-modules文件夹：" class="headerlink" title="找到想要放置博客的文件夹，比如（F:\Hexo），在该目录下鼠标右击打开Gitbash工具，（右键菜单中没有该选项的可以用cmd命令cd等进入该文件夹）。执行下面的语句，会在F:\Hexo文件夹下创建node_modules文件夹："></a>找到想要放置博客的文件夹，比如（F:\Hexo），在该目录下鼠标右击打开Gitbash工具，（右键菜单中没有该选项的可以用cmd命令cd等进入该文件夹）。执行下面的语句，会在F:\Hexo文件夹下创建node_modules文件夹：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>这里init后面可以跟文件目录，比如我想在F:\Hexo下创建博客文件夹，那么可以用下面的命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init F:\Hexo</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<ol start="2">
-<li><p>安装依赖包<br>在Hexo目录下，执行以下命令，你会发现F:\Hexo\node_modules目录下多了好多文件夹</p>
+<h4 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h4><p>在Hexo目录下，执行以下命令，你会发现F:\Hexo\node_modules目录下多了好多文件夹</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>本地调试<br>目前为止，已经搭建好自己的Hexo博客了，但是只能在本机上查看。执行以下两个命令（在F:\Hexo目录下）：</p>
+
+<h4 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h4><p>目前为止，已经搭建好自己的Hexo博客了，但是只能在本机上查看。执行以下两个命令（在F:\Hexo目录下）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate  或简写为  hexo g</span><br><span class="line">$ hexo server    或简写为  hexo s</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+
 <ul>
 <li>然后在浏览器中输入 localhost:4000 就可以看到自己的博客了。<br>如果hexo运行成功，但是不能访问可能的原因是4000端口被占用，修改运行端口为5000（也可以是其他未被占用的端口），后在浏览器中输入 localhost:5000。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s -p 5000 （等同于hexo serve -p 5000 ）</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h3 id="部署到-Github"><a href="#部署到-Github" class="headerlink" title="部署到 Github"></a>部署到 Github</h3><ol>
-<li><p>注册Github账户<br>前往Github网站，注册一个新用户。用邮箱注册的一定前往邮箱去验证邮件。要不然之后可能会有小问题。</p>
-</li>
-<li><p>创建一个新的repository<br>在自己的Github主页右下角,创建一个新的repository。比如我的Github用户名为guomingshan，那么我创建的repository的名字应该是 guomingshan.github.io 。</p>
-<img src="/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/name.png" title="创建同名仓库">
+<h3 id="部署到-Github"><a href="#部署到-Github" class="headerlink" title="部署到 Github"></a>部署到 Github</h3><h4 id="注册Github账户"><a href="#注册Github账户" class="headerlink" title="注册Github账户"></a>注册Github账户</h4><p>前往Github网站，注册一个新用户。用邮箱注册的一定前往邮箱去验证邮件。要不然之后可能会有小问题。</p>
+<h4 id="创建一个新的repository"><a href="#创建一个新的repository" class="headerlink" title="创建一个新的repository"></a>创建一个新的repository</h4><p>在自己的Github主页右下角,创建一个新的repository。比如我的Github用户名为guomingshan，那么我创建的repository的名字应该是 guomingshan.github.io 。</p>
+<img src="/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/name.png" width="800" height="700" title="创建同名仓库">
 
-</li>
-</ol>
 <blockquote>
-<p><strong>这里严重注意</strong>:<br>一定要以你的Github用户名.github.io创建。假如我没有用guomingshan.github.io而是用了blog.github.io，那么当我浏览器访问博客的时候会出现404错误。这里并不是没有部署成功，而是把它部署在了这里:<a href="http://gitguomingshan.github.io/blog.github.io。所以，如果想直接guomingshan.github.io访问，那么就需要和用户名保持一致。" target="_blank" rel="noopener">http://gitguomingshan.github.io/blog.github.io。所以，如果想直接guomingshan.github.io访问，那么就需要和用户名保持一致。</a></p>
+<p><strong>这里严重注意</strong>:<br>一定要以你的Github用户名.github.io创建。假如我没有用guomingshan.github.io而是用了blog.github.io，那么当我浏览器访问博客的时候会出现404错误。这里并不是没有部署成功，而是把它部署在了这里:<a href="http://gitguomingshan.github.io/blog.github.io。" target="_blank" rel="noopener">http://gitguomingshan.github.io/blog.github.io。</a> 所以，如果想直接guomingshan.github.io访问，那么就需要和用户名保持一致。</p>
 </blockquote>
-<ol start="3">
-<li>将本地的文件部署（上传）到Github账户中</li>
-</ol>
-<ul>
-<li><p>安装依赖包 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑本地Hexo目录下文件_comfig.yml，在最后添加如下代码（在你修改时，把 gitzhaoyang 要替换成你自己的用户名）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git  </span><br><span class="line">    repository: git@github.com:guomingshan/guomingshan.git  #库（Repository）地址</span><br><span class="line">    branch: master  #分支名称。如果不指定，则默认值为 master</span><br><span class="line">    message: #自定义提交信息 (默认为 `Site updated: &#123;&#123; now(&apos;YYYY-MM-DD HH:mm:ss&apos;) &#125;&#125;`)</span><br></pre></td></tr></table></figure>
+<h4 id="将本地的文件部署（上传）到Github账户中"><a href="#将本地的文件部署（上传）到Github账户中" class="headerlink" title="将本地的文件部署（上传）到Github账户中"></a>将本地的文件部署（上传）到Github账户中</h4><h4 id="安装依赖包-hexo-deployer-git"><a href="#安装依赖包-hexo-deployer-git" class="headerlink" title="安装依赖包 hexo-deployer-git"></a>安装依赖包 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
+<h4 id="编辑本地Hexo目录下文件-comfig-yml，在最后添加如下代码（在你修改时，把-gitzhaoyang-要替换成你自己的用户名）"><a href="#编辑本地Hexo目录下文件-comfig-yml，在最后添加如下代码（在你修改时，把-gitzhaoyang-要替换成你自己的用户名）" class="headerlink" title="编辑本地Hexo目录下文件_comfig.yml，在最后添加如下代码（在你修改时，把 gitzhaoyang 要替换成你自己的用户名）"></a>编辑本地Hexo目录下文件_comfig.yml，在最后添加如下代码（在你修改时，把 gitzhaoyang 要替换成你自己的用户名）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git  </span><br><span class="line">    repository: git@github.com:guomingshan/guomingshan.git  #库（Repository）地址</span><br><span class="line">    branch: master  #分支名称。如果不指定，则默认值为 master</span><br><span class="line">    message: #自定义提交信息 (默认为 `Site updated: &#123;&#123; now(&apos;YYYY-MM-DD HH:mm:ss&apos;) &#125;&#125;`)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>.yml文件对格式规范要求很严格，type: repository: branch: 前面有两个空格，冒号后面都有一个空格。</p>
 </blockquote>
+<h4 id="执行以下指令即可完成部署："><a href="#执行以下指令即可完成部署：" class="headerlink" title="执行以下指令即可完成部署："></a>执行以下指令即可完成部署：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean #清除数据</span><br><span class="line">$ hexo d     # 一键generate并部署，hexo deploy的简写</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><p>执行以下指令即可完成部署：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean   #清除数据</span><br><span class="line">$ hexo deploy  #一键generate并部署</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果你是windows用户，那么当你执行$ hexo deploy命令的时候，可能会先后出现提示框让你输入你的Github用户名和Github密码，只要输入正确，上传就没有问题。</p>
-</li>
+<li>如果你是windows用户，那么当你执行$ hexo deploy命令的时候，可能会先后出现提示框让你输入你的Github用户名和Github密码，只要输入正确，上传就没有问题。</li>
 </ul>
 <p>好了，现在我们的博客已经在Github上面部署成功了，可以在浏览器访问gitzhaoyang.github.io试试了。</p>
+<h3 id="部署可能遇到的报错"><a href="#部署可能遇到的报错" class="headerlink" title="部署可能遇到的报错"></a>部署可能遇到的报错</h3><h4 id="没有部署权限"><a href="#没有部署权限" class="headerlink" title="没有部署权限"></a>没有部署权限</h4><blockquote>
+<p>@github.com: Permission denied (publickey).<br>fatal: Could not read from remote repository.</p>
+</blockquote>
+<img src="/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/公钥问题.png" width="800" height="700" title="没有权限">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">查看是否已经有了ssh密钥：在开始菜单里找到 git bush</span><br><span class="line">$ cd ~/.ssh</span><br><span class="line">如果没有密钥则不会有此文件夹，有则备份删除</span><br><span class="line">生成密钥：</span><br><span class="line">ssh-keygen -t rsa -C “haiyan.xu.vip@gmail.com”</span><br><span class="line">按3个回车，密码为空。</span><br></pre></td></tr></table></figure>
+
+<img src="/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/获取公钥.png" width="800" height="700" title="获取公钥">
+
+<h4 id="本地是好的，git上cass样式出不来"><a href="#本地是好的，git上cass样式出不来" class="headerlink" title="本地是好的，git上cass样式出不来"></a>本地是好的，git上cass样式出不来</h4><img src="/guomingshan/2018/05/01/在Github上面搭建Hexo博客（一）：部署到Github/css样式问题.png" width="500" height="300" title="css样式问题">
+<blockquote><p>例如，<code>http://yoursite.com/blog</code><br>则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code></p>
+<footer><strong>来自于_config.yml配置</strong><cite><a href="https://hexo.io/zh-cn/docs/tag-plugins" target="_blank" rel="noopener">网站存放在子目录</a></cite></footer></blockquote>
+
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="hexo-server-启动服务器"><a href="#hexo-server-启动服务器" class="headerlink" title="hexo server 启动服务器"></a>hexo server 启动服务器</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">server</span>     <span class="comment"># 默认http://localhost:4000/</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">s</span>          <span class="comment"># 简写</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">s</span> <span class="bullet">-p</span> <span class="number">5000</span>  <span class="comment"># 切换到 http://localhost:5000/</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="hexo-generate-生成静态文件"><a href="#hexo-generate-生成静态文件" class="headerlink" title="hexo generate 生成静态文件"></a>hexo generate 生成静态文件</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">hexo</span> <span class="string">generate</span>    </span><br><span class="line"><span class="string">hexo</span> <span class="string">g</span>           <span class="comment"># 简写</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-d</code>, <code>--deploy</code></td>
+<td>13” Pro</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>Plus</td>
+</tr>
+<tr>
+<td>Watch</td>
+<td>Series 3</td>
+</tr>
+<tr>
+<td>Headphone</td>
+<td>HD650</td>
+</tr>
+</tbody></table>
+<p>hexo g == hexo generate<br>hexo d == hexo deploy<br>hexo n == hexo new<br>```</p>
+<img class="在Github上面搭建Hexo博客（一）：部署到Github\公钥问题.png 150 60">
+
+<img class="img-class 公钥问题.png 150 60 ‘123’">
+
+<img class="[img-cass] 公钥问题.png title text 'alt text'">
 <p>提示：<br>现在Hexo支持更加简单的命令格式了，比如：</p>
 <p>hexo s == hexo server<br>hexo g == hexo generate<br>hexo d == hexo deploy<br>hexo n == hexo new<br>后续我会把如何配置博客信息，发表文章，设置博客主题，不同电脑间进行同时更新自己的Blog的方法等更新上来,感兴趣的人可以关注<br>用户名和邮箱地址的作用<br>用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。<br>每次commit都会用用户名和邮箱纪录。<br>github的contributions统计就是按邮箱来统计的。</p>
 <p>查看用户名和邮箱地址：</p>
@@ -422,6 +454,7 @@
 <!-- more -->
 
 <p>分割测试</p>
+<p>非必填 [class names] alt 用于图片没显示时在图片显示区域显示一个说明文字。<br>非必填 [class names] title 表示鼠标在图片上停留时，显示一个悬浮框，其中显示的文字。<br>说明：<br>非必填 [class names] class 全局属性，可以定义一个类名，给这个类加css样式<br>非必填 gao<br>非必填 kuan </p>
 
       
     </div>
@@ -574,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Hexo文件夹"><span class="nav-number">4.</span> <span class="nav-text">创建Hexo文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到-Github"><span class="nav-number">5.</span> <span class="nav-text">部署到 Github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Hexo文件夹"><span class="nav-number">4.</span> <span class="nav-text">创建Hexo文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#找到想要放置博客的文件夹，比如（F-Hexo），在该目录下鼠标右击打开Gitbash工具，（右键菜单中没有该选项的可以用cmd命令cd等进入该文件夹）。执行下面的语句，会在F-Hexo文件夹下创建node-modules文件夹："><span class="nav-number">4.1.</span> <span class="nav-text">找到想要放置博客的文件夹，比如（F:\Hexo），在该目录下鼠标右击打开Gitbash工具，（右键菜单中没有该选项的可以用cmd命令cd等进入该文件夹）。执行下面的语句，会在F:\Hexo文件夹下创建node_modules文件夹：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖包"><span class="nav-number">4.2.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地调试"><span class="nav-number">4.3.</span> <span class="nav-text">本地调试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到-Github"><span class="nav-number">5.</span> <span class="nav-text">部署到 Github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册Github账户"><span class="nav-number">5.1.</span> <span class="nav-text">注册Github账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个新的repository"><span class="nav-number">5.2.</span> <span class="nav-text">创建一个新的repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将本地的文件部署（上传）到Github账户中"><span class="nav-number">5.3.</span> <span class="nav-text">将本地的文件部署（上传）到Github账户中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖包-hexo-deployer-git"><span class="nav-number">5.4.</span> <span class="nav-text">安装依赖包 hexo-deployer-git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑本地Hexo目录下文件-comfig-yml，在最后添加如下代码（在你修改时，把-gitzhaoyang-要替换成你自己的用户名）"><span class="nav-number">5.5.</span> <span class="nav-text">编辑本地Hexo目录下文件_comfig.yml，在最后添加如下代码（在你修改时，把 gitzhaoyang 要替换成你自己的用户名）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行以下指令即可完成部署："><span class="nav-number">5.6.</span> <span class="nav-text">执行以下指令即可完成部署：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署可能遇到的报错"><span class="nav-number">6.</span> <span class="nav-text">部署可能遇到的报错</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#没有部署权限"><span class="nav-number">6.1.</span> <span class="nav-text">没有部署权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地是好的，git上cass样式出不来"><span class="nav-number">6.2.</span> <span class="nav-text">本地是好的，git上cass样式出不来</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">7.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-server-启动服务器"><span class="nav-number">7.1.</span> <span class="nav-text">hexo server 启动服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-generate-生成静态文件"><span class="nav-number">7.2.</span> <span class="nav-text">hexo generate 生成静态文件</span></a></li></ol></li></ol></div>
             
 
           </div>
