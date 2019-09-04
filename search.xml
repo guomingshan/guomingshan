@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[在Github上面搭建Hexo博客（二）：Git 遇到的一些问题]]></title>
+    <url>%2Fguomingshan%2F2019%2F09%2F04%2F%E5%9C%A8Github%E4%B8%8A%E9%9D%A2%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9AGit-%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[一级标题二级标题三级标题 这是引用的内容 这是引用的内容 1.]]></content>
+      <categories>
+        <category>一级目录</category>
+        <category>二级目录</category>
+      </categories>
+      <tags>
+        <tag>标签一</tag>
+        <tag>标签二</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在Github上面搭建Hexo博客（三）：Next主题1]]></title>
+    <url>%2Fguomingshan%2F2018%2F05%2F02%2F%E5%9C%A8Github%E4%B8%8A%E9%9D%A2%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9ANext%E4%B8%BB%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[下载主题在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码： 12$ cd your-hexo-site$ git clone https://github.com/iissnan/hexo-theme-next themes/next 启用主题打开站点配置文件_\Hexo\_config.yml， 找到 theme 字段，并将其值更改为 next。 1theme: next 添加新页面12345$ hexo new page about # 关于$ hexo new page tags # 标签$ hexo new page categories # 分类$ hexo new page archives # 归档$ hexo new page schedule # 时间轴（日程表） 搜索本地搜索 1$ npm install hexo-generator-searchdb --save 辑 站点配置文件，新增以下内容到任意位置： 12345search: path: search.xml field: post format: html limit: 10000 123# Local search 本地搜索local_search: enable: true 字数统计&amp;阅读时长12345678# Post wordcount display settings# Dependencies: https://github.com/willin/hexo-wordcountpost_wordcount: item_text: true wordcount: true # 单篇 字数统计 min2read: true # 单篇 阅读时长 totalcount: false # 网站 字数统计 separated_meta: true 修改完成主题配置文件后，启动服务预览：如果出现字数统计和阅读时长失效的情况，一般是因为没有安装 hexo-wordcount 插件 1npm i --save hexo-wordcount 显示文字用 Sublime Text 工具打开 post.swig 文件，路径如下：xxx_blog/themes/next/layout/_macro/post.swig 修改完成后，重新执行启动服务预览就可以了。修改后，效果如下图所示： 提示：现在Hexo支持更加简单的命令格式了，比如： hexo s == hexo serverhexo g == hexo generatehexo d == hexo deployhexo n == hexo new后续我会把如何配置博客信息，发表文章，设置博客主题，不同电脑间进行同时更新自己的Blog的方法等更新上来,感兴趣的人可以关注用户名和邮箱地址的作用用户名和邮箱地址是本地git客户端的一个变量，不随git库而改变。每次commit都会用用户名和邮箱纪录。github的contributions统计就是按邮箱来统计的。 查看用户名和邮箱地址： $ git config user.name $ git config user.email 修改用户名和邮箱地址： $ git config –global user.name “username” $ git config –global user.email “email” 分割测试 非必填 [class names] alt 用于图片没显示时在图片显示区域显示一个说明文字。非必填 [class names] title 表示鼠标在图片上停留时，显示一个悬浮框，其中显示的文字。说明：非必填 [class names] class 全局属性，可以定义一个类名，给这个类加css样式非必填 gao非必填 kuan 666666333]]></content>
+      <categories>
+        <category>其他</category>
+        <category>搭建静态博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next主题</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在Github上面搭建Hexo博客（一）：部署到Github]]></title>
+    <url>%2Fguomingshan%2F2018%2F05%2F01%2F%E5%9C%A8Github%E4%B8%8A%E9%9D%A2%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E9%83%A8%E7%BD%B2%E5%88%B0Github%2F</url>
+    <content type="text"><![CDATA[安装Git 前往Git官网下载Windows版本压缩包，下载完成后解压安装。 安装Node.js 前往Node.js官方下载网站，下载Node.js官方安装包，下载完成后同样解压安装。 安装Hexo 到目前为止，安装Hexo所需要的环境已将安装完成，下一步只需要安装Hexo便可以了。 点击鼠标右键，看是否有Git bash Here选项。如果没有可以前往Git安装根目录，启动git-base.exe也可以。在命令行中输入：1$ npm install -g hexo-cli 便安装完成了。 创建Hexo文件夹找到想要放置博客的文件夹，比如（F:\Hexo），在该目录下鼠标右击打开Gitbash工具，（右键菜单中没有该选项的可以用cmd命令cd等进入该文件夹）。执行下面的语句，会在F:\Hexo文件夹下创建node_modules文件夹：1$ hexo init 这里init后面可以跟文件目录，比如我想在F:\Hexo下创建博客文件夹，那么可以用下面的命令：1$ hexo init F:\Hexo 安装依赖包在Hexo目录下，执行以下命令，你会发现F:\Hexo\node_modules目录下多了好多文件夹 1$ npm install 本地调试目前为止，已经搭建好自己的Hexo博客了，但是只能在本机上查看。执行以下两个命令（在F:\Hexo目录下）： 12$ hexo generate 或简写为 hexo g$ hexo server 或简写为 hexo s 然后在浏览器中输入 localhost:4000 就可以看到自己的博客了。如果hexo运行成功，但是不能访问可能的原因是4000端口被占用，修改运行端口为5000（也可以是其他未被占用的端口），后在浏览器中输入 localhost:5000。1$ hexo s -p 5000 （等同于hexo serve -p 5000 ） 部署到 Github注册Github账户前往Github网站，注册一个新用户。用邮箱注册的一定前往邮箱去验证邮件。要不然之后可能会有小问题。 创建一个新的repository在自己的Github主页右下角,创建一个新的repository。比如我的Github用户名为guomingshan，那么我创建的repository的名字应该是 guomingshan.github.io 。 这里严重注意:一定要以你的Github用户名.github.io创建。假如我没有用guomingshan.github.io而是用了blog.github.io，那么当我浏览器访问博客的时候会出现404错误。这里并不是没有部署成功，而是把它部署在了这里:http://gitguomingshan.github.io/blog.github.io。 所以，如果想直接guomingshan.github.io访问，那么就需要和用户名保持一致。 将本地的文件部署（上传）到Github账户中安装依赖包 hexo-deployer-git1$ npm install hexo-deployer-git --save 编辑本地Hexo目录下文件_comfig.yml，在最后添加如下代码（在你修改时，把 gitzhaoyang 要替换成你自己的用户名）12345deploy: type: git repository: git@github.com:guomingshan/guomingshan.git #库（Repository）地址 branch: master #分支名称。如果不指定，则默认值为 master message: #自定义提交信息 (默认为 `Site updated: &#123;&#123; now(&apos;YYYY-MM-DD HH:mm:ss&apos;) &#125;&#125;`) .yml文件对格式规范要求很严格，type: repository: branch: 前面有两个空格，冒号后面都有一个空格。 执行以下指令即可完成部署：12$ hexo clean #清除数据$ hexo d # 一键generate并部署，hexo deploy的简写 如果你是windows用户，那么当你执行$ hexo deploy命令的时候，可能会先后出现提示框让你输入你的Github用户名和Github密码，只要输入正确，上传就没有问题。 好了，现在我们的博客已经在Github上面部署成功了，可以在浏览器访问gitzhaoyang.github.io试试了。 部署可能遇到的报错没有部署权限 @github.com: Permission denied (publickey).fatal: Could not read from remote repository. 123456查看是否已经有了ssh密钥：在开始菜单里找到 git bush$ cd ~/.ssh如果没有密钥则不会有此文件夹，有则备份删除生成密钥：$ ssh-keygen -t rsa -C “haiyan.xu.vip@gmail.com”按3个回车，密码为空。 本地是好的，git上cass样式出不来 例如，http://yoursite.com/blog则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/ 来自于_config.yml配置网站存放在子目录 常用命令hexo new 新建一篇文章1$ hexo new [layout] &lt;title&gt; 如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来 1$ hexo new &quot;post title with whitespace&quot; 默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 index.md 文件。你可以使用 --path 参数来覆盖上述行为、自行决定文件的目录： 1hexo new page --path about/me &quot;About me&quot; hexo server 启动服务器123$ hexo server # 默认http://localhost:4000/$ hexo s # 简写$ hexo s -p 5000 # 切换到 http://localhost:5000/ hexo generate 生成静态文件12$ hexo generate $ hexo g # 简写 选项 描述 备注 -d--deploy 文件生成后立即部署网站 hexo g -d hexo g –deploy -w--watch 监视文件变动 hexo g -w hexo g –watch -b--bail 生成过程中如果发生任何未处理的异常则抛出异常 hexo g -b hexo g –bail -f--force 效果接近 hexo clean &amp;&amp;hexo generate hexo g -f hexo g –force hexo deploy 部署网站123$ hexo deploy $ hexo d # 简写$ hexo d -g #部署之前预先生成静态文件,= hexo d --generate 其他命令12345$ hexo version # 显示 Hexo 版本。$ hexo clean # 清除缓存文件 (`db.json`) 和已生成的静态文件 (`public`)。$ hexo --debug # 调试模式，在终端中显示调试信息并记录到 `debug.log` $ hexo --safe # 安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。$ hexo --debug # 查看 Hexo 插件]]></content>
+      <categories>
+        <category>其他</category>
+        <category>搭建静态博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+</search>
